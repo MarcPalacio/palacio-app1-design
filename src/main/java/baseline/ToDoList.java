@@ -16,7 +16,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
 public class ToDoList {
-
     @FXML
     private DatePicker InputDate;
 
@@ -109,5 +108,4 @@ public class ToDoList {
         // Updates the list accordingly to whichever radio button is selected
         // (Show all, show incomplete, show complete)
     }
-
 }

@@ -14,7 +14,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
 public class UpdateMenu {
-
     @FXML
     private TextField inputDescription;
 

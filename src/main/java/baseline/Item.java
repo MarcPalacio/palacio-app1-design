@@ -16,19 +16,19 @@ public class Item {
     }
 
     // Setters and getters are used in case the user decides to edit an item of the list
-    public void setEvent(){
+    public void setEvent(String event){
         // sets event
     }
 
-    public void setDescription(){
+    public void setDescription(String description){
         // sets description
     }
 
-    public void setDueDate(){
+    public void setDueDate(String dueDate){
         // sets due date
     }
 
-    public void setIsComplete(){
+    public void setIsComplete(boolean isComplete){
         // sets if the item is complete or not
     }
 

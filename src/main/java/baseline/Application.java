@@ -11,7 +11,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Application extends javafx.application.Application{
-    private static Stage stage = new Stage();
     public static void main(String[] args) throws Exception {
         launch(args);
     }

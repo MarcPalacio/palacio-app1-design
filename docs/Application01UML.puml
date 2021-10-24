@@ -1,0 +1,126 @@
+@startuml
+class Application{
+    'Methods
+    +main(String)
+    +start(Stage)
+}
+
+class Item{
+    'Attributes
+    -event: String
+    -description: String
+    -dueDate: String
+    -isComplete: boolean
+
+    'Methods
+    'Constructor of item
+    +Item(String event, String description, String dueDate, boolean isComplete)
+    'Setters
+    +setEvent(String event)
+    +setDescription(String description)
+    +setDueDate(String dueDate)
+    +setIsComplete(boolean isComplete)
+    'Getters
+    +getEvent(): String event
+    +getDescription(): String description
+    +getDueDate(): String dueDate
+    +getComplete(): boolean isComplete
+}
+
+class List{
+    'Attributes
+    -ArrayList<Item> listItems: ArrayList<Item>
+
+    'Methods
+    +createsListItems(String inputFileName)
+    +addsItem(Item add)
+    +createOutput(): String output
+}
+
+class ListListMenu{
+    'Attributes
+    -addListButton: Button
+    -deleteListButton: Button
+    -editListButton: Button
+    -inputListName: TextField
+    -listTable: TableColumn<?, ?>
+    -loadListButton: Button
+    -saveListButton: Button
+    -toDoListTable: TableView<?>
+
+    'Methods
+    +onAddListPressed(ActionEvent event)
+    +onDeleteListPressed(ActionEvent event)
+    +onEditListPressed(ActionEvent event)
+    +onLoadListPressed(ActionEvent event)
+    +onSavedListPressed(ActionEvent event)
+}
+
+class ToDoList{
+    'Attributes
+    -InputDate: DatePicker
+    -addItemButton: Button
+    -deleteItemButton: Button
+    -descriptionColumn: TableColumn<?, ?>
+    -dueDateColumn: TableColumn<?, ?>
+    -editItemButton: Button
+    -eventColumn: TableColumn<?, ?>
+    -inputDescription: TextField
+    -inputEvent: TextField
+    -listGroup: ToggleGroup
+    -rbComplete: RadioButton
+    -rbIncomplete: RadioButton
+    -rbShowAll: RadioButton
+    -rbShowComplete: RadioButton
+    -rbShowIncomplete: RadioButton
+    -saveAndCloseButton: Button
+    -statusColumn: TableColumn<?, ?>
+    -statusGroup: ToggleGroup
+    -toDoListTable: TableView<?>
+
+    'Methods
+    +onAddItemPressed(ActionEvent event)
+    +onDeleteItemPressed(ActionEvent event)
+    +onEditItemPressed(ActionEvent event)
+    +onSaveAndClosePressed(ActionEvent event)
+    +listGroupAction(ActionEvent action)
+}
+
+class UpdateMenu{
+    'Attributes
+    -inputDescription: TextField
+    -inputDueDate: DatePicker
+    -inputEvent: TextField
+    -rbCompleted: RadioButton
+    -rbIncomplete: RadioButton
+    -statusGroup: ToggleGroup
+    -updateItemButton: Button
+
+    'Methods
+    +onUpdateButtonPressed(ActionEvent event)
+}
+
+class MyFileReader{
+    'Attributes
+    -ArrayList<Item> inputList: ArrayList<Item>
+
+    'Methods
+    +scanInputFile(String inputFileName): ArrayList<Item> output
+}
+
+class MyFileWriter{
+    'Methods
+    +writeToFile(String write, String fileOutputName)
+}
+
+Application -- ListListMenu
+Application -- ToDoList
+Application -- UpdateMenu
+ListListMenu -- List
+ToDoList -- List
+UpdateMenu -- List
+List -- MyFileReader
+List -- MyFileWriter
+List -- Item
+
+@enduml

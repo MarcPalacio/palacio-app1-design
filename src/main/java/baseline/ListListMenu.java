@@ -15,7 +15,6 @@ import javafx.stage.Stage;
 
 
 public class ListListMenu {
-    private static Stage stage = new Stage();
     @FXML
     private Button addListButton;
 
